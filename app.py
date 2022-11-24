@@ -7,23 +7,27 @@ from PIL import Image
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-resume_file = current_dir / "assets" / "CV.pdf"
-profile_pic = current_dir / "assets" / "profile-pic.png"
+resume_file = current_dir / "assets" / "Deepan_CallidusResume.docx"
+profile_pic = current_dir / "assets" / "profile-pic.jpg"
 
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Digital CV | John Doe"
 PAGE_ICON = ":wave:"
-NAME = "John Doe"
+NAME = "Deepan Shanmugam"
 DESCRIPTION = """
-Senior Data Analyst, assisting enterprises by supporting data-driven decision-making.
+Senior Consultant\n @ SAP
+\n SAP Commissions and Data Integration | SAP CPQ | SAP HANA | SAP Conversational AI | LCNC | AppGyver | Python | SAP BTP | NodeJS
 """
-EMAIL = "johndoe@email.com"
+EMAIL = "deepanshanmugam13@gmail.com"
+# SOCIAL_MEDIA = {
+#     "YouTube": "https://youtube.com/c/codingisfun",
+#     "LinkedIn": "https://www.linkedin.com/in/deepanshanmugam/",
+#     "GitHub": "https://github.com",
+#     "Twitter": "https://twitter.com",
+# }
 SOCIAL_MEDIA = {
-    "YouTube": "https://youtube.com/c/codingisfun",
-    "LinkedIn": "https://linkedin.com",
-    "GitHub": "https://github.com",
-    "Twitter": "https://twitter.com",
+    "LinkedIn": "https://www.linkedin.com/in/deepanshanmugam/"
 }
 PROJECTS = {
     "🏆 Sales Dashboard - Comparing sales across three stores": "https://youtu.be/Sb0A9i6d320",
@@ -32,8 +36,9 @@ PROJECTS = {
     "🏆 MyToolBelt - Custom MS Excel add-in to combine Python & Excel": "https://pythonandvba.com/mytoolbelt/",
 }
 
+PROGRAMMING ="PROGRAMMING"
 
-st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
+st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON )
 
 
 # --- LOAD CSS, PDF & PROFIL PIC ---
@@ -51,6 +56,9 @@ with col1:
 
 with col2:
     st.title(NAME)
+    st.markdown('hello <span style="font-family:Courier; color:Blue; font-size: 20px;">hello</span>',unsafe_allow_html=True)
+    # st.markdown('I only want to make only'<span style="color:blue;">'THIS'</span>'word blue',,unsafe_allow_html=True)
+    
     st.write(DESCRIPTION)
     st.download_button(
         label=" 📄 Download Resume",
@@ -71,12 +79,17 @@ for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
 # --- EXPERIENCE & QUALIFICATIONS ---
 st.write('\n')
 st.subheader("Experience & Qulifications")
-st.write(
+st.write( 
     """
-- ✔️ 7 Years expereince extracting actionable insights from data
-- ✔️ Strong hands on experience and knowledge in Python and Excel
-- ✔️ Good understanding of statistical principles and their respective applications
-- ✔️ Excellent team-player and displaying strong sense of initiative on tasks
+- ✔️ Senior Consultant at SAP India, with 12+ years of IT experience working on various SAP Callidus Cloud and On-Premise solutions
+
+- ✔️ Responsible for architecture, design, development, testing & deployments of SAP SPM solutions, namely, SAP Sales Cloud Commissions,Data Integration for SAP Commissions and SAP Configure Price Quote
+
+- ✔️ Predominantly involved in Data Integration activities for Commissions system
+
+- ✔️ Currently involved in Incident Handling/Delivering Solutions on SAP Configure Price Quote (CPQ) and Innovations around SPM solutions
+
+  ✔️ Experience working on projects across domains such as Insurance, HealthCare, Banking, Logistics and Supply Chain Management and Telecom domains
 """
 )
 
@@ -84,14 +97,36 @@ st.write(
 # --- SKILLS ---
 st.write('\n')
 st.subheader("Hard Skills")
+# st.write(
+#     """
+# - 👩‍💻 Programming: Python, Shell (bash), Batch scripting, Oracle PL SQL, HANA SQL Script, Knockout JS
+# - 📊 Data Visulization: PowerBi, MS Excel, Plotly
+# - 📚 Modeling: Logistic regression, linear regression, decition trees
+# - 🗄️ Databases: Postgres, MongoDB, MySQL
+# """
+# )
+
+# st.markdown(<p 'Hello' <span style='color:green'>'world'</span></p>,unsafe_allow_html=True)
 st.write(
     """
-- 👩‍💻 Programming: Python (Scikit-learn, Pandas), SQL, VBA
-- 📊 Data Visulization: PowerBi, MS Excel, Plotly
-- 📚 Modeling: Logistic regression, linear regression, decition trees
-- 🗄️ Databases: Postgres, MongoDB, MySQL
-"""
-)
+- 👩‍💻 Python, Shell (bash), Batch scripting, Oracle PL SQL, HANA SQL Script, Knockout JS""")
+
+# - 📚 **_Applications_** :  SAP Callidus Commissions, SAP Commissions Data Loader, SAP Configure Price Quote, SAP Territory & Quota Management, SAP Workflow, SAP Conversational AI, SAP Appgyver, SAP Business Technology Platform, SAP Cloud Platform Integration, Data Integration using RESTful APIs (Commissions and CPQ)
+
+# - 🗄️ **_Databases_** :  HANA, Oracle, MySQL, MongoDB
+# """
+# )
+
+# st.write(
+#     """
+# - 👩‍💻 **_Programming_**:  Python, Shell (bash), Batch scripting, Oracle PL SQL, HANA SQL Script, Knockout JS
+
+# - 📚 **_Applications_** :  SAP Callidus Commissions, SAP Commissions Data Loader, SAP Configure Price Quote, SAP Territory & Quota Management, SAP Workflow, SAP Conversational AI, SAP Appgyver, SAP Business Technology Platform, SAP Cloud Platform Integration, Data Integration using RESTful APIs (Commissions and CPQ)
+
+# - 🗄️ **_Databases_** :  HANA, Oracle, MySQL, MongoDB
+# """
+# )
+
 
 
 # --- WORK HISTORY ---
@@ -100,15 +135,33 @@ st.subheader("Work History")
 st.write("---")
 
 # --- JOB 1
-st.write("🚧", "**Senior Data Analyst | Ross Industries**")
-st.write("02/2020 - Present")
+st.write("🚧", "**Senior Consultant | SAP **")
+st.write("07/2009 - Present")
 st.write(
     """
-- ► Used PowerBI and SQL to redeﬁne and track KPIs surrounding marketing initiatives, and supplied recommendations to boost landing page conversion rate by 38%
-- ► Led a team of 4 analysts to brainstorm potential marketing and sales improvements, and implemented A/B tests to generate 15% more client leads
-- ► Redesigned data model through iterations that improved predictions by 12%
+**_Technologies_**: SAP Commissions, Oracle PL SQL, Shell Scripting, SAP Workflow, SAP Territory Quota and Management, SAP Configure Price Quote (CPQ), SAP Conversational AI, SAP Cloud Platform Integration, SAP Commissions Data Loader, SAP Appgyver, SAP BTP, SAP Cloud Foundry, SAP API Business HUB""")
+st.write("""
+**Roles & Responsibilities :** 
+\n•	Started off as Data Integration and Commissions specialist and was involved primarily in building Oracle and HANA stage hooks for Commissions 
+\n•	Responsible for requirements gathering and preparing functional and technical solution design documents for Commissions/Data Integration.
+\n•	Currently Involved in incident handling and delivering solutions on SAP Configure Price Quote (CPQ)
+\n•	Part of the innovation team within SAP, contributing and working on ideas to enhance Callidus solutions
+
 """
 )
+
+st.write("The following list won’t indent no matter what I try:")
+st.markdown("Item 1")
+st.markdown("- Item 2")
+st.markdown("- Item 3")
+
+st.markdown('''
+<style>
+[data-testid="stMarkdownContainer"] ul{
+    list-style-position: outside;
+}
+</style>
+''', unsafe_allow_html=True)
 
 # --- JOB 2
 st.write('\n')
