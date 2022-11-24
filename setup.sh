@@ -10,4 +10,5 @@ primaryColor = '#d33682'\n\
 backgroundColor = '#002b36'\n\
 secondaryBackgroundColor = '#586e75'\n\
 textColor = '#fff'\n\
+enableWebsocketCompression=false\n\
 " > ~/.streamlit/config.toml
