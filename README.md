@@ -44,3 +44,7 @@ streamlit run app.py
 ## Feedback
 If you have any feedback, please reach out to me at contact@pythonandvba.com
 ![Logo](https://www.pythonandvba.com/banner-img)
+
+
+gcloud builds submit --tag gcr.io/my-resume-369609/streamlit-resume  --project=my-resume-369609
+gcloud run deploy --image gcr.io/my-resume-369609/streamlit-resume --platform managed  --project=my-resume-369609 --allow-unauthenticated

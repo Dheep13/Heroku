@@ -7,12 +7,12 @@ from PIL import Image
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-resume_file = current_dir / "assets" / "Deepan_CallidusResume.docx"
-profile_pic = current_dir / "assets" / "profile-pic.jpg"
+resume_file = current_dir / "assets" / "CV_Deepan_new.docx"
+profile_pic = current_dir / "assets" / "profile-pic.png"
 
 
 # --- GENERAL SETTINGS ---
-PAGE_TITLE = "Digital CV | John Doe"
+PAGE_TITLE = "Deepan Shanmugam-SAP"
 PAGE_ICON = ":wave:"
 NAME = "Deepan Shanmugam"
 DESCRIPTION = """
@@ -29,6 +29,7 @@ EMAIL = "deepanshanmugam13@gmail.com"
 SOCIAL_MEDIA = {
     "LinkedIn": "https://www.linkedin.com/in/deepanshanmugam/"
 }
+
 # PROJECTS = {
 #     "🏆 Sales Dashboard - Comparing sales across three stores": "https://youtu.be/Sb0A9i6d320",
 #     "🏆 Income and Expense Tracker - Web app with NoSQL database": "https://youtu.be/3egaMfE9388",
@@ -65,7 +66,8 @@ with col1:
 
 with col2:
     st.title(NAME)
-    st.markdown('hello <span style="font-family:Courier; color:Blue; font-size: 20px;">hello</span>',unsafe_allow_html=True)
+    # st.subheader(st.markdown('hello <span style="font-family:Courier; color:Blue; font-size: 20px;">hello</span>',unsafe_allow_html=True))
+    # st.subheader('hello <span style="font-family:Courier; color:Blue; font-size: 20px;">hello</span>')
     # st.markdown('I only want to make only'<span style="color:blue;">'THIS'</span>'word blue',,unsafe_allow_html=True)
     
     st.write(DESCRIPTION)
@@ -76,13 +78,18 @@ with col2:
         mime="application/octet-stream",
     )
     st.write("📫", EMAIL)
+    for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
+        st.write(f"[{platform}]({link})")
 
 
-# --- SOCIAL LINKS ---
-st.write('\n')
-cols = st.columns(len(SOCIAL_MEDIA))
-for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
-    cols[index].write(f"[{platform}]({link})")
+
+
+
+# # --- SOCIAL LINKS ---
+# st.write('\n')
+# cols = st.columns(len(SOCIAL_MEDIA))
+# for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
+#     cols[index].write(f"[{platform}]({link})")
 
 
 # --- EXPERIENCE & QUALIFICATIONS ---
@@ -118,11 +125,11 @@ st.subheader("Hard Skills")
 # st.markdown(<p 'Hello' <span style='color:green'>'world'</span></p>,unsafe_allow_html=True)
 st.write(
     """
-- 👩‍💻 **_Programming_** : Python, Shell (bash), Batch scripting, Oracle PL SQL, HANA SQL Script, Knockout JS)
+- 👩‍💻 **Programming** : Python, Shell (bash), Batch scripting, Oracle PL SQL, HANA SQL Script, Knockout JS)
 
-- :computer: **_Applications_** :  SAP Callidus Commissions, SAP Commissions Data Loader, SAP Configure Price Quote, SAP Territory & Quota Management, SAP Workflow, SAP Conversational AI, SAP Appgyver, SAP Business Technology Platform, SAP Cloud Platform Integration, Data Integration using RESTful APIs (Commissions and CPQ)
+- :computer: **Applications** :  SAP Callidus Commissions, SAP Commissions Data Loader, SAP Configure Price Quote, SAP Territory & Quota Management, SAP Workflow, SAP Conversational AI, SAP Appgyver, SAP Business Technology Platform, SAP Cloud Platform Integration, Data Integration using RESTful APIs (Commissions and CPQ)
 
-- 🗄️ **_Databases_** :  HANA, Oracle, MySQL, MongoDB
+- 🗄️ **Databases** :  HANA, Oracle, MySQL, MongoDB
 """)
 
 
@@ -150,14 +157,14 @@ st.write(
     """
 **_Technologies_**: SAP Commissions, Oracle PL SQL, Shell Scripting, SAP Workflow, SAP Territory Quota and Management, SAP Configure Price Quote (CPQ), SAP Conversational AI, SAP Cloud Platform Integration, SAP Commissions Data Loader, SAP Appgyver, SAP BTP, SAP Cloud Foundry, SAP API Business HUB""")
 st.write("""
-**Roles & Responsibilities :** 
-\n•	Started off as Data Integration and Commissions specialist and was involved primarily in building Oracle and HANA stage hooks for Commissions 
-\n•	Responsible for requirements gathering and preparing functional and technical solution design documents for Commissions/Data Integration.
-\n•	Currently Involved in incident handling and delivering solutions on SAP Configure Price Quote (CPQ)
-\n•	Part of the innovation team within SAP, contributing and working on ideas to enhance Callidus solutions
-
-"""
+**Roles & Responsibilities :** """
 )
+st.markdown("- :point_right:Started off as Data Integration and Commissions specialist and was involved primarily in building Oracle and HANA stage hooks for Commissions ")
+st.markdown("- :point_right:Responsible for requirements gathering and preparing functional and technical solution design documents for Commissions/Data Integration")
+st.markdown("- :point_right:Currently Involved in incident handling and delivering solutions on SAP Configure Price Quote (CPQ)")
+st.markdown("- :point_right:Part of the innovation team within SAP, contributing and working on ideas to enhance Callidus solutions")
+
+
 
 st.write(""" _______________________________________________________________________________________________________________________________________""")
 
@@ -168,12 +175,12 @@ st.write(
     """
 **_Technologies_**: SAP Commissions, Oracle PL SQL, Shell Scripting""")
 st.write("""
-**Roles & Responsibilities :** 
-\n•	Callidus enhancements and performance tuning
-\n•	Commissions Rule Writing and Data Integration
-\n•	Involved in RFPs for Callidus projects 
-"""
+**Roles & Responsibilities :** """
 )
+st.markdown("- :point_right:Callidus enhancements and performance tuning")
+st.markdown("- :point_right:Commissions Rule Writing and Data Integration")
+st.markdown("- :point_right:	Involved in RFPs for Callidus projects") 
+
 
 st.write(""" _______________________________________________________________________________________________________________________________________""")
 
@@ -184,15 +191,14 @@ st.write(
     """
 **_Technologies_**: SAP Commissions, SAP Workflow, Oracle PL SQL, Shell Scripting""")
 st.write("""
-**Roles & Responsibilities :** 
-\n•	Data Integration-Integrating the legacy system with Callidus Commissions.
-\n•	Preparation of mapping specification documents for both Callidus Commissions inbounds and outbounds.
-\n•	Build Oracle Procedures/Packages, shell scripts for specific data integration/migration requirements.
-\n•	Resolve issues related to pipeline jobs.
-\n•	Build and test workflow screens for onboarding of agents
-
-"""
+**Roles & Responsibilities :** """
 )
+st.markdown("- :point_right:Data Integration-Integrating the legacy system with Callidus Commissions")
+st.markdown("- :point_right:Preparation of mapping specification documents for both Callidus Commissions inbounds and outbounds")
+st.markdown("- :point_right:Build Oracle Procedures/Packages, shell scripts for specific data integration/migration requirements")
+st.markdown("- :point_right:Resolve issues related to pipeline jobs")
+st.markdown("- :point_right:Build and test workflow screens for onboarding of agents")
+
 
 st.write(""" _______________________________________________________________________________________________________________________________________""")
 
@@ -203,12 +209,10 @@ st.write(
     """
 **_Technologies_**: Xactly Express""")
 st.write("""
-**Roles & Responsibilities :** 
-\n•	Building compensation plans for payees in the Xactly express system.
-\n•	Data Mapping between Salesforce and Xactly Express.
+**Roles & Responsibilities :** """)
+st.markdown("- :point_right:Building compensation plans for payees in the Xactly express system")
+st.markdown("- :point_right:Data Mapping between Salesforce and Xactly Express")
 
-"""
-)
 
 st.write(""" _______________________________________________________________________________________________________________________________________""")
 
